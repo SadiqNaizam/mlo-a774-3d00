@@ -45,7 +45,7 @@ const ChatListItem: React.FC<ChatListItemProps> = ({
         <div className="flex justify-between items-start mt-1">
           <p className="text-sm text-muted-foreground truncate">{lastMessage}</p>
           {unreadCount > 0 && (
-            <Badge className="ml-2 bg-green-500 text-white hover:bg-green-600 rounded-full h-6 w-6 flex items-center justify-center p-0">
+            <Badge className="ml-2 bg-primary text-primary-foreground hover:bg-primary/90 rounded-full h-6 w-6 flex items-center justify-center p-0">
               {unreadCount}
             </Badge>
           )}
