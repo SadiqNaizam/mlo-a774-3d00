@@ -32,7 +32,7 @@ const ReadReceiptIcon: React.FC<ReadReceiptIconProps> = ({ status, className }) 
     case 'read':
       return (
         <CheckCheck
-          className={cn(iconSize, 'text-sky-500', className)}
+          className={cn(iconSize, 'text-accent', className)}
           aria-label="Read"
         />
       );
