@@ -21,7 +21,7 @@ const contacts = [
   { id: '3', name: 'Charlie Brown', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026706d', status: 'Hey there! I am using WhatsApp.' },
   { id: '4', name: 'Diana Miller', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026707d', status: 'Busy' },
   { id: '5', name: 'Ethan Davis', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026708d', status: 'Sleeping' },
-  { id: '6', name: 'Fiona Garcia', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026709d', status: 'Can\'t talk, WhatsApp only' },
+  { id: '6', name: 'Fiona Garcia', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026709d', status: "Can't talk, WhatsApp only" },
   { id: '7', name: 'George Rodriguez', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026710d', status: 'At work' },
   { id: '8', name: 'Hannah Wilson', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026711d', status: '...' },
 ];
@@ -43,13 +43,13 @@ const ContactsPage = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-gray-100">
+    <div className="flex flex-col h-screen bg-background">
       <AppHeader />
       <main className="flex-1 flex flex-col overflow-hidden">
         {/* Search and Header Section */}
-        <div className="p-4 bg-white border-b">
+        <div className="p-4 bg-card border-b">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
             <Input
               type="text"
               placeholder="Search contacts"
@@ -66,25 +66,25 @@ const ContactsPage = () => {
             {/* Quick Actions */}
             <div className="p-2">
                  <Button variant="ghost" className="w-full justify-start gap-4 p-4 h-auto">
-                    <Avatar className="h-12 w-12 bg-emerald-600">
-                        <UserPlus className="h-6 w-6 text-white"/>
+                    <Avatar className="h-12 w-12 bg-primary">
+                        <UserPlus className="h-6 w-6 text-primary-foreground"/>
                     </Avatar>
                     <div className="text-left">
-                        <p className="font-semibold text-base">New contact</p>
+                        <p className="font-semibold text-base text-foreground">New contact</p>
                     </div>
                 </Button>
             </div>
            
             {filteredContacts.map((contact) => (
               <Link to="/chat-view" key={contact.id} className="block">
-                <div className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-200 transition-colors cursor-pointer">
+                <div className="flex items-center gap-4 p-3 rounded-lg hover:bg-muted transition-colors cursor-pointer">
                   <Avatar className="h-12 w-12">
                     <AvatarImage src={contact.avatar} alt={contact.name} />
                     <AvatarFallback>{getInitials(contact.name)}</AvatarFallback>
                   </Avatar>
                   <div className="flex-1">
-                    <p className="font-semibold text-gray-800">{contact.name}</p>
-                    <p className="text-sm text-gray-500 truncate">{contact.status}</p>
+                    <p className="font-semibold text-foreground">{contact.name}</p>
+                    <p className="text-sm text-muted-foreground truncate">{contact.status}</p>
                   </div>
                 </div>
               </Link>
