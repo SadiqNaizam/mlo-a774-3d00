@@ -38,15 +38,15 @@ const ChatInputBar: React.FC = () => {
   const hasText = message.trim().length > 0;
 
   return (
-    <div className="bg-gray-100 p-2 flex items-end gap-2 w-full border-t">
+    <div className="bg-muted p-2 flex items-end gap-2 w-full border-t">
       {/* Emoji Button */}
-      <Button variant="ghost" size="icon" className="shrink-0 text-gray-500">
+      <Button variant="ghost" size="icon" className="shrink-0 text-muted-foreground">
         <Smile className="h-6 w-6" />
         <span className="sr-only">Open emoji picker</span>
       </Button>
       
       {/* File Attachment Button */}
-      <Button variant="ghost" size="icon" className="shrink-0 text-gray-500">
+      <Button variant="ghost" size="icon" className="shrink-0 text-muted-foreground">
         <Paperclip className="h-6 w-6" />
         <span className="sr-only">Attach a file</span>
       </Button>
@@ -59,7 +59,7 @@ const ChatInputBar: React.FC = () => {
           onChange={(e) => setMessage(e.target.value)}
           onKeyDown={handleKeyDown}
           rows={1}
-          className="w-full resize-none rounded-lg border-gray-300 bg-white p-2 text-base shadow-sm focus-visible:ring-2 focus-visible:ring-offset-0 focus-visible:ring-green-500"
+          className="w-full resize-none rounded-lg border-input bg-card p-2 text-base shadow-sm focus-visible:ring-2 focus-visible:ring-offset-0 focus-visible:ring-primary"
           style={{ minHeight: '40px', maxHeight: '120px' }} // Controls the expandable height
         />
       </div>
@@ -69,7 +69,7 @@ const ChatInputBar: React.FC = () => {
         {hasText ? (
           <Button
             size="icon"
-            className="rounded-full bg-green-500 hover:bg-green-600 text-white h-10 w-10 flex-shrink-0"
+            className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground h-10 w-10 flex-shrink-0"
             onClick={handleSendMessage}
             aria-label="Send message"
           >
@@ -78,7 +78,7 @@ const ChatInputBar: React.FC = () => {
         ) : (
           <Button
             size="icon"
-            className="rounded-full bg-green-500 hover:bg-green-600 text-white h-10 w-10 flex-shrink-0"
+            className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground h-10 w-10 flex-shrink-0"
             onClick={handleMicClick}
             aria-label="Record a voice note"
           >
