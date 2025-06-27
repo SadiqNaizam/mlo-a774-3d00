@@ -26,8 +26,8 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message, timestamp, isSen
 
   // WhatsApp-like colors: a light green for sent, white/gray for received.
   const bubbleColorClasses = isSent
-    ? 'bg-emerald-100 dark:bg-emerald-800'
-    : 'bg-white dark:bg-slate-700';
+    ? 'bg-primary/20 dark:bg-primary/40'
+    : 'bg-card';
 
   // Specific corner rounding to better match modern chat UIs.
   const bubbleRadiusClasses = isSent
@@ -37,11 +37,11 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message, timestamp, isSen
   return (
     <div className={clsx('w-full flex mb-2', bubbleAlignmentClasses)}>
       <div className={clsx('px-3 py-2 shadow-sm max-w-[80%] md:max-w-[65%]', bubbleColorClasses, bubbleRadiusClasses)}>
-        <p className="text-sm text-gray-800 dark:text-gray-200 break-words">
+        <p className="text-sm text-foreground break-words">
           {message}
         </p>
         <div className="flex items-center justify-end gap-1.5 mt-1 float-right clear-both">
-          <span className="text-xs text-gray-500 dark:text-gray-400 select-none">
+          <span className="text-xs text-muted-foreground select-none">
             {timestamp}
           </span>
           {/* The read receipt is only shown for messages sent by the user */}
