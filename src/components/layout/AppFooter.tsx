@@ -8,7 +8,7 @@ const AppFooter: React.FC = () => {
 
   const navLinkClasses = ({ isActive }: { isActive: boolean }) =>
     `flex flex-col items-center justify-center gap-1 w-full pt-2 pb-1 transition-colors duration-200 ${
-      isActive ? 'text-emerald-600' : 'text-gray-500 hover:text-emerald-500'
+      isActive ? 'text-primary' : 'text-muted-foreground hover:text-primary'
     }`;
 
   return (
@@ -18,7 +18,7 @@ const AppFooter: React.FC = () => {
           {({ isActive }) => (
             <>
               <div className="relative">
-                <MessageCircle className={`h-6 w-6 ${isActive ? 'fill-emerald-100' : ''}`} />
+                <MessageCircle className={`h-6 w-6 ${isActive ? 'fill-primary/20' : ''}`} />
                 {/* Example badge */}
                 <Badge variant="destructive" className="absolute -top-1 -right-2 px-1.5 py-0.5 text-xs h-auto">
                   3
@@ -32,7 +32,7 @@ const AppFooter: React.FC = () => {
         <NavLink to="/status" className={navLinkClasses}>
           {({ isActive }) => (
             <>
-              <CircleDashed className={`h-6 w-6 ${isActive ? 'text-emerald-600' : ''}`} />
+              <CircleDashed className={`h-6 w-6 ${isActive ? 'text-primary' : ''}`} />
               <span className="text-xs font-medium">Status</span>
             </>
           )}
@@ -41,7 +41,7 @@ const AppFooter: React.FC = () => {
         <NavLink to="/contacts" className={navLinkClasses}>
            {({ isActive }) => (
             <>
-              <Users className={`h-6 w-6 ${isActive ? 'fill-emerald-100' : ''}`} />
+              <Users className={`h-6 w-6 ${isActive ? 'fill-primary/20' : ''}`} />
               <span className="text-xs font-medium">Contacts</span>
             </>
           )}
