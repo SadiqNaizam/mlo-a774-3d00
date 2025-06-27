@@ -32,11 +32,11 @@ const ChatViewPage = () => {
   const contactAvatarUrl = "https://i.pravatar.cc/150?u=jane_doe";
 
   return (
-    <div className="flex flex-col h-screen bg-gray-100 dark:bg-gray-900">
+    <div className="flex flex-col h-screen bg-background">
       {/* Custom Chat Header */}
-      <header className="bg-emerald-700 text-white shadow-md flex items-center p-2 z-10 gap-3">
+      <header className="bg-primary text-primary-foreground shadow-md flex items-center p-2 z-10 gap-3">
         <Link to="/"> {/* Navigate back to ChatListPage */}
-          <Button variant="ghost" size="icon" className="text-white hover:bg-emerald-600">
+          <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary/80">
             <ArrowLeft className="h-6 w-6" />
           </Button>
         </Link>
@@ -46,16 +46,16 @@ const ChatViewPage = () => {
         </Avatar>
         <div className="flex-grow">
           <p className="font-semibold">{contactName}</p>
-          <p className="text-xs text-emerald-100">{contactStatus}</p>
+          <p className="text-xs text-primary-foreground/80">{contactStatus}</p>
         </div>
         <div className="flex items-center gap-2">
-          <Button variant="ghost" size="icon" className="text-white hover:bg-emerald-600">
+          <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary/80">
             <Video className="h-5 w-5" />
           </Button>
-          <Button variant="ghost" size="icon" className="text-white hover:bg-emerald-600">
+          <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary/80">
             <Phone className="h-5 w-5" />
           </Button>
-          <Button variant="ghost" size="icon" className="text-white hover:bg-emerald-600">
+          <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary/80">
             <MoreVertical className="h-5 w-5" />
           </Button>
         </div>
@@ -64,7 +64,6 @@ const ChatViewPage = () => {
       {/* Main Content Area with Chat History */}
       <main 
         className="flex-grow overflow-y-auto"
-        style={{ backgroundImage: "url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')" }}
       >
         <ScrollArea className="h-full">
           <div className="p-4 space-y-2">
