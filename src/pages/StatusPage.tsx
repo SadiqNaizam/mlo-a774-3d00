@@ -65,50 +65,50 @@ const StatusPage = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-gray-100 dark:bg-gray-900">
+    <div className="flex flex-col h-screen bg-background">
       <AppHeader />
 
       <main className="flex-1 overflow-y-auto pb-20"> {/* Padding bottom to avoid footer overlap */}
         
         {/* My Status Section */}
-        <Card className="m-4 p-3 rounded-lg shadow-sm bg-white dark:bg-gray-800">
+        <Card className="m-4 p-3 rounded-lg shadow-sm bg-card">
           <div className="flex items-center gap-4">
             <div className="relative">
               <Avatar className="h-14 w-14">
                 <AvatarImage src="https://i.pravatar.cc/150?u=myuser" alt="My Avatar" />
                 <AvatarFallback>ME</AvatarFallback>
               </Avatar>
-              <div className="absolute bottom-0 right-0 bg-emerald-500 rounded-full p-1 border-2 border-white dark:border-gray-800">
-                <Plus className="h-3 w-3 text-white" />
+              <div className="absolute bottom-0 right-0 bg-primary rounded-full p-1 border-2 border-card">
+                <Plus className="h-3 w-3 text-primary-foreground" />
               </div>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-800 dark:text-white">My status</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">Tap to add status update</p>
+              <h3 className="font-semibold text-foreground">My status</h3>
+              <p className="text-sm text-muted-foreground">Tap to add status update</p>
             </div>
           </div>
         </Card>
 
         {/* Recent Updates Section */}
         <div className="px-4 mt-4">
-          <h4 className="text-sm font-semibold text-emerald-600 dark:text-emerald-500 mb-2">RECENT UPDATES</h4>
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+          <h4 className="text-sm font-semibold text-primary mb-2">RECENT UPDATES</h4>
+          <div className="bg-card rounded-lg shadow-sm">
             {recentUpdates.map((update, index) => (
               <React.Fragment key={update.user.name}>
                 <div 
-                  className="flex items-center gap-4 p-3 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700"
+                  className="flex items-center gap-4 p-3 cursor-pointer hover:bg-muted"
                   onClick={() => handleOpenStatus(update)}
                 >
-                  <Avatar className="h-14 w-14 ring-2 ring-offset-2 ring-emerald-500 dark:ring-offset-gray-800">
+                  <Avatar className="h-14 w-14 ring-2 ring-offset-2 ring-primary dark:ring-offset-card">
                     <AvatarImage src={update.user.avatarUrl} alt={update.user.name} />
                     <AvatarFallback>{update.user.name.charAt(0)}</AvatarFallback>
                   </Avatar>
                   <div>
-                    <h3 className="font-semibold text-gray-800 dark:text-white">{update.user.name}</h3>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">{update.timestamp}</p>
+                    <h3 className="font-semibold text-foreground">{update.user.name}</h3>
+                    <p className="text-sm text-muted-foreground">{update.timestamp}</p>
                   </div>
                 </div>
-                {index < recentUpdates.length - 1 && <hr className="ml-20 border-gray-200 dark:border-gray-700" />}
+                {index < recentUpdates.length - 1 && <hr className="ml-20 border-border" />}
               </React.Fragment>
             ))}
           </div>
